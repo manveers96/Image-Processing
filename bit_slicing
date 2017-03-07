@@ -1,0 +1,6 @@
+// Bit Slicing of an image (8 bits)
+
+A=imread('ppp2.jpg');
+A=im2double(A);
+B=pmodulo(A/128,2);      //128=2^7
+imshow(B);

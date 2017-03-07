@@ -1,0 +1,25 @@
+// Blurring of an image through Matrix Median Method(3X3)
+
+i=imread('superman.jpg');
+[r c d]=size(i);
+for a=1:r-3
+    for b=1:c-3
+        for w=1:d
+        s=0.0;
+        for p=a:a+2
+            for q=b:b+2
+                s=s+i(p,q,w)/9.0;
+            end
+        end
+        
+    for p=a:a+2
+        for q=b:b+2
+            j(p,q,w)=s;
+        end
+        end
+    end
+    b=b+3;
+    end
+    a=a+3;
+end
+imshow(j);

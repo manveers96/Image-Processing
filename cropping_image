@@ -1,0 +1,14 @@
+//Cropping an image in the aspect ratio 16:9
+
+i=imread('abc.jpg');
+[r,c]=size(i);
+for a=1:r
+for b=1:c
+if(a<=((c*9)/16))
+crop(a,b)=i(a,b);
+else
+crop(a,b)=0;
+end
+end
+end
+imshow(crop);

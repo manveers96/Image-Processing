@@ -1,0 +1,10 @@
+//Negative of an image
+
+i=imread('abc.jpg');
+[r,c]=size(i);
+for a=1:r
+for b=1:c
+neg(a,b)=255-i(a,b);
+end
+end
+imshow(neg);

@@ -1,0 +1,11 @@
+//RGB to gray
+
+i=imread('abc.jpg');
+i=im2double(i);
+[r,c]=size(i);
+for a=1:r
+for b=1:c
+gry(a,b)=0.2989*i(a,b,1)+0.5870*i(a,b,3)+0.1140*i(a,b,2);
+end
+end
+imshow(gry);

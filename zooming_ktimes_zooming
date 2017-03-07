@@ -1,0 +1,37 @@
+//Zooming of an image through K-Times zooming method
+
+i=imread('pqr.jpg');
+k=2;
+[r c]=size(i);
+for a=1:r
+    for b=1:c-1
+        for w=1:3
+            temp=k;
+            steps=floor((i(a,b+1,w)-i(a,b,w))/k);
+            num=0;
+            while temp>=1
+                j(a,b*k-1+num,w)=i(a,b,w)+steps*num;
+                temp=temp-1;
+                num=num+1;
+            end
+        end
+    end
+end
+
+[r2 c2]=size(j);
+for a=1:r2-1
+    for b=1:c2
+        for w=1:3
+            temp=k;
+            steps=floor((j(a+1,b,w)-j(a,b,w))/k);
+            num=0;
+            while temp>=1
+                u(a*k-1,b,w)=j(a,b,w)+steps*num;
+                temp=temp-1;
+                num=num+1;
+            end
+        end 
+    end
+end
+imshow(u);
+

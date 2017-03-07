@@ -1,0 +1,21 @@
+//Zooming of an image through Pixel replication
+
+i=imread("pqr.jpg");
+[r,c]=size(i);
+for a=1:r
+    for b=1:c
+       for w=1:3
+        j(a,2*b-1,w)=i(a,b,w);
+        j(a,2*b,w)=i(a,b,w);
+       end
+     end   
+end
+for a=1:r
+    for b=1:c*2
+        for w=1:3
+        k(2*a-1,b,w)=j(a,b,w);
+        k(2*a,b,w)=j(a,b,w);
+       end
+     end   
+end
+imshow(k);
